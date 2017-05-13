@@ -27,8 +27,8 @@ Build a prediction model for nba lnext season n via machine learning. Package in
 Detail Read:
 ---------
 
-* [nba-prediction.docx](https://github.com/classtag/nba-prediction/blob/master/nba-prediction.docx)
-* [nba-prediction.pdf](https://github.com/classtag/nba-prediction/blob/master/nba-prediction.pdf)
+* https://github.com/classtag/nba-prediction/blob/master/nba-prediction.docx
+* https://github.com/classtag/nba-prediction/blob/master/nba-prediction.pdf
 
 
 Features
