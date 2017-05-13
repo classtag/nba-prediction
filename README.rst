@@ -20,12 +20,15 @@ nba-prediction
 
 Build a prediction model for nba lnext season n via machine learning. Package include sklearn
 
-* Detail read:
-- [nba-prediction.docx](./nba-prediction.docx)
-- [nba-prediction.pdf](./nba-prediction.pdf)
-
 * Free software: MIT license
 * Documentation: https://nba-prediction.readthedocs.io.
+
+
+Detail Read:
+---------
+
+* [nba-prediction.docx](https://github.com/classtag/nba-prediction/blob/master/nba-prediction.docx)
+* [nba-prediction.pdf](https://github.com/classtag/nba-prediction/blob/master/nba-prediction.pdf)
 
 
 Features
