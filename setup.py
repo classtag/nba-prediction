@@ -10,7 +10,7 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'Click>=6.0',
+    'Click>=6.0', 'numpy', 'pandas', 'sklearn'
     # TODO: put package requirements here
 ]
 
@@ -21,7 +21,7 @@ test_requirements = [
 setup(
     name='nba_prediction',
     version='0.1.0',
-    description="Build a prediction model for nba lnext season n via machine learning. Package include sklearn",
+    description="Build a prediction model for nba next season n via machine learning. Package include sklearn",
     long_description=readme + '\n\n' + history,
     author="Victor An",
     author_email='anduo@qq.com',
