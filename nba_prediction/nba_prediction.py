@@ -147,12 +147,12 @@ def predict_winner(team_1, team_2, model):
 
     # team 1，客场队伍
     features.append(get_elo(team_1))
-    for key, value in team_stats.loc[team_1].iteritems():
+    for key, value in TEAM_STAT_MAP.loc[team_1].iteritems():
         features.append(value)
 
     # team 2，主场队伍
     features.append(get_elo(team_2) + 100)
-    for key, value in team_stats.loc[team_2].iteritems():
+    for key, value in TEAM_STAT_MAP.loc[team_2].iteritems():
         features.append(value)
 
     features = np.nan_to_num(features)
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     o_stat = pd.read_csv(DATA_FOLDER + '/15-16_Opponent_Per_Game_Stat.csv')
     t_stat = pd.read_csv(DATA_FOLDER + '/15-16_Team_Per_Game_Stat.csv')
 
-    team_stats = initialize_data(m_stat, o_stat, t_stat)
+    TEAM_STAT_MAP = initialize_data(m_stat, o_stat, t_stat)
 
     result_data = pd.read_csv(DATA_FOLDER + '/15-16_Result.csv')
     X, y = build_data_set(result_data)
@@ -173,7 +173,7 @@ if __name__ == '__main__':
     print("Fitting on %d game samples.." % len(X))
 
     # 使用sklearn的logistic regression方法建立回归模型
-    model = linear_model.logisticregression()
+    model = linear_model.LogisticRegression()
     model.fit(X, y)
 
     # 利用10折交叉验证计算训练正确率
@@ -198,7 +198,7 @@ if __name__ == '__main__':
             loser = team1
             result.append([winner, loser, 1 - prob])
 
-    with open('16-17_Predicted_Result.csv', 'wb') as f:
+    with open('16-17_Predicted_Result.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(['win', 'lose', 'probability'])
         writer.writerows(result)
